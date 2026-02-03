@@ -1,0 +1,111 @@
+/* Boîte centrale */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffe6f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+h1 {
+    color:red;
+    text-transform: uppercase;
+    font-size: 20px;
+    position : center;
+}
+
+.box {
+    background-color: #ffc0cb;
+    padding: 15px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 1;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* GIF */
+.bear {
+    width: 100%;
+    max-width: calc(100% - 40px);
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Boutons */
+button { width: 100px; height: 35px; border: none; border-radius: 10px; color: white; font-size: 14px; cursor: pointer; transition: all 0.3s ease; }
+.yes { background-color: #80ed99; }
+.no { background-color: #d45e5e; }
+
+/* Fond animé SVG */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* permet de cliquer sur les boutons */
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heart-svg {
+    position: absolute;
+    pointer-events: none; /* ne bloque pas les clics */
+    fill: red;
+    animation-name: float;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(-20vh) translateX(0); opacity:0; }
+    10% { opacity:1; }
+    50% { transform: translateY(50vh) translateX(10px); }
+    100% { transform: translateY(110vh) translateX(-10px); opacity:0; }
+}
+
+
+
+
+
+/* Corps de page : centrer verticalement et horizontalement */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffe6f0;
+    display: flex;
+    flex-direction: column; /* texte au-dessus du GIF */
+    justify-content: center; /* centre verticalement */
+    align-items: center;     /* centre horizontalement */
+    min-height: 100vh;
+    text-align: center;
+}
+
+
+
+/* Texte principal */
+.fun-class h1 {
+    font-size: clamp(24px, 5vw, 40px); /* s’adapte à l’écran */
+    color: #e52525;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* GIF responsive */
+.fun-gif {
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
